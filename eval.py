@@ -23,8 +23,12 @@ def run_cli(*args):
     return r.returncode, r.stdout, r.stderr
 
 
+_STATS = {"passed": 0, "failed": 0}
+
+
 def check(name, cond, detail=""):
     print(("PASS  " if cond else "FAIL  ") + name + (f"  {detail}" if detail else ""))
+    _STATS["passed" if cond else "failed"] += 1
     return bool(cond)
 
 
@@ -61,6 +65,7 @@ def main() -> int:
     ok &= check("no-arg does not traceback", "Traceback" not in (out4 + err4))
 
     print("\nEVAL_OK" if ok else "\nEVAL_FAILED")
+    print("RESULT: %d passed, %d failed" % (_STATS["passed"], _STATS["failed"]))
     return 0 if ok else 1
 
 
