@@ -1,10 +1,11 @@
+<!-- PUBLISH: title="My friend got paid four months late because nobody checked one invoice" tags="devchallenge,hf26challenge,ai,python" -->
 A friend who freelances got paid four months late. Not because the client was broke - because a $2,847 invoice sat in someone's inbox marked "need to check with accounting," and nobody checked. She was too embarrassed to chase it, the client was too busy to look, and the money just... sat there.
 
 The invoice itself had a problem too. Looking at it later, we found the tax line didn't add up: 8 items at 12% plus a 10% discount applied *before* tax instead of after. It was $61 off - small enough to slip through, big enough that her accountant noticed and she had to eat the correction.
 
 **InvoiceAudit** is the tool I wish she'd had: an offline, zero-dependency invoice risk checker that reads your invoices before you send them and flags the things that delay or lose you money.
 
-<!-- THEME: Week 4 theme tie-in — the publish automation replaces this comment with 2-3 sentences tying InvoiceAudit to the revealed Week 4 theme (a scored criterion). If publishing manually after launch, write the tie-in here yourself. -->
+Week 4's theme is building with open-weight models and open-source AI tools, and InvoiceAudit is the deliberately model-free corner of that theme: pure Python standard library, no API keys, no uploads. The reasoning is simple — invoice data is the full financial picture of a business, so the most open-source-AI thing I could build is a tool where the data never leaves the machine and every check is a rule you can read in an afternoon.
 
 ## What it checks
 
